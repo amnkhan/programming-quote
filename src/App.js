@@ -11,14 +11,17 @@ function App() {
   
   // Fetch Quote From API
   const getQuoteFromApi = async () => {
-    const apiUrl = `http://quotes.stormconsultancy.co.uk/random.json`
+    const apiUrl =
+    "https://raw.githubusercontent.com/skolakoda/programming-quotes-api/master/backup/quotes.json";
 
     try {
       const res = await fetch( apiUrl )
-      const data = await res.json()
+      let data = await res.json()
+      data = data[Math.floor(Math.random() * (data.length + 1))]
+
       setQuote({
-        quote: data.quote,
-        author: data.author
+        quote: data["en"],
+        author: data["author"]
       })
     } catch(err) {
       console.log(err)
