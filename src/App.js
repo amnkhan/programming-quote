@@ -1,6 +1,6 @@
 import {useState , useEffect} from 'react'
 import Quote from './components/Quote'
-import Loader from './components/Loader'
+// import Loader from './components/Loader'
 
 function App() {
   // State for Quote
